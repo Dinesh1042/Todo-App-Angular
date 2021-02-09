@@ -1,0 +1,43 @@
+<div class="todoListCont">
+  <ul class="TodoUlCont" cdkDropList (cdkDropListDropped)="drop($event)">
+    <li
+      class="todoList"
+      *ngFor="let todo of todoList; index as i"
+      @fade
+      cdkDrag
+    >
+      <div class="liLeft" (click)="completedFlag(todo.id)">
+        <div class="iscompleted">
+          <input
+            type="checkbox"
+            name="checkbox"
+            [(ngModel)]="todo.isCompleted"
+          />
+        </div>
+        <div class="UserTodo">
+          <p [style.color]="todo.isCompleted ? 'rgba(0, 0, 0, 0.46)' : '#111'">
+            {{ todo.value | titlecase }}
+          </p>
+        </div>
+      </div>
+
+      <div class="liRight">
+        <button id="edit" (click)="editTodo(todo.id)">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >edit</mat-icon
+          >
+        </button>
+        <button id="delete" (click)="deleteTodo(todo.id)">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >delete</mat-icon
+          >
+        </button>
+        <button id="drag" cdkDragHandle>
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >drag_indicator
+          </mat-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+<div class="listCont">
+  <ul cdkDropList (cdkDropListDropped)="drop($event)">
+    <li
+      @fade
+      (click)="completedFlag(todo.id)"
+      (dblclick)="deleteTodo(todo.id)"
+      cdkDrag
+      *ngFor="let todo of todoList"
+      [ngClass]="todo.isCompleted ? 'completed' : 'notcompleted'"
+    >
+      <p>{{ todo.value | titlecase }}</p>
+    </li>
+  </ul>
+</div>

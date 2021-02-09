@@ -1,0 +1,17 @@
+<div class="formCont">
+  <form #todoFrom="ngForm" (ngSubmit)="addTodo(todoFrom)" @inputFade>
+    <input
+      type="text"
+      autocomplete="off"
+      name="TodoText"
+      [placeholder]="!editMode ? 'Enter your Todo' : 'Edit Your Todo'"
+      class="input"
+      [(ngModel)]="currentTodoValue"
+      [style.borderColor]="currentTodoValue ? '#3f51b5' : '#ced4da'"
+    />
+    <button [disabled]="!currentTodoValue ? true : false" type="submit">
+      <span *ngIf="!editMode; else editModeOn">Add Todo</span>
+      <ng-template #editModeOn>Edit Todo</ng-template>
+    </button>
+  </form>
+</div>

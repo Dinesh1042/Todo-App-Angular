@@ -1,0 +1,29 @@
+.navCont {
+  width: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+}
+nav {
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+nav h1 {
+  margin: 10px;
+  font-weight: 500;
+}
+nav a {
+  color: #fff;
+  margin: 10px;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+nav a.active {
+  color: orange;
+}
