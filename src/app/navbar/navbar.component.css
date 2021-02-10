@@ -23,7 +23,19 @@ nav a {
   text-decoration: none;
   padding: 3px 8px;
   border-radius: 4px;
+  position: relative;
 }
 nav a.active {
   color: orange;
+  position: relative;
+}
+nav a.active::after {
+  height: 2px;
+  width: 60%;
+  background-color: orange;
+  content: "";
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }

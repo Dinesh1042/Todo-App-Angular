@@ -1,7 +1,6 @@
 <div class="listCont">
   <ul cdkDropList (cdkDropListDropped)="drop($event)">
     <li
-      @fade
       (click)="completedFlag(todo.id)"
       (dblclick)="deleteTodo(todo.id)"
       cdkDrag
